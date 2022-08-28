@@ -1,0 +1,214 @@
+Architecture Template Page
+
+Instructions
+Getting Started
+
+Use this document template to build the  architectur
+
+
+1. Purpose
+2. Business Context
+3. Application
+4. Data 
+6. Environments & Deployment
+7. Resiliency
+8. Security Context
+9. Observability
+10. DevOps, Test and Build Architecture 
+11. Tech Debt, MSIs & Exceptions
+12. References
+
+
+Data Classification	
+Release Name*	<<Release Name>>	SOX Relevancy / High Risk	
+Release Date*	<<Release Date>>	NPI	
+Business Owner	
+Recovery Group / Priority	
+ 
+1. Purpose
+Explain the purpose and intent of this asset which is to be designed/built . 
+
+2. Business Context
+2.1. Business Impact: 
+Enterprise Capability Model Alignment :: 
+Expected Outcomes & Business Value: 
+Business Value KPI's (Indicate how to measure provided business value): <<>>
+
+2.2. Enterprise Process Repository information:
+Impacted Processes:
+Impacted Organizations, Personas and/or Journeys:
+Impacted Systems and Data:
+
+
+3. Application
+Provide Target State Context
+List software and servers 
+Estimated traffic (i.e. bandwidth) expected / increase in hardware usage
+
+3.1 System Information
+Legacy Asset (Name / Asset ID)
+Cloud Asset ID 
+Confirm Updated to Reflect Documented Design: 	
+Expected Life of Application:	<< Temporary or Long Term>>
+
+3.2 Supporting Technologies & Related Patterns
+#	
+Shared Services / Technologies 
+
+(Use Technical Capabilities Master List) 
+
+#	Approved Patterns/Reference Architectures:
+#	Outstanding Dependencies
+
+
+
+3.3 System Boundaries / Context Diagram
+In the space that follows, provide an explicit definition of the system’s boundary
+
+3.4 System Boundaries
+Includes all components that can affect confidentiality, integrity and availability 
+#	
+Category
+Component
+Notes
+
+
+3.5 Ports & Protocols
+The table below lists the ports, protocols and services enabled in this information system. Please indicate the components of the information system that make use of the ports, protocols and services along with their purpose (e.g., system logging, and load balancing etc.). Reference approved pattern:   Model for AWS 2.0 Re-Design
+
+Table with below columns
+
+#	
+Port
+Protocol
+Encryption
+Services
+Purpose
+Approved Pattern #
+Source
+Destination
+
+4. Data 
+
+Provide a brief description of the business data needs that will be addressed by this business solution.
+
+4.1 Data Flow/Interaction Diagram
+Detailed dataflows are required for data-centric solutions
+
+4.2 Dataset Registration
+Provide a list of known datasets in scope for the solution.
+
+4.3 Data Exchange 
+Interfaces must be fully approved/accepted 
+
+4.4 Attribute Rationalization & Data Model
+Data models must be registered and data attributes must be rationalized
+
+5. Interface
+
+5.1 Interfaces
+Highlight internal and external application interface dependencies and boundaries.
+
+5.2 API Definitions
+If the architecture includes APIs, include information about the APIs being used.
+
+6. Environments & Deployment
+Provide a general description of the technical system environment. Include information about all system environments 
+that are used, e.g., Production, Acceptance, Development environment etc.   
+
+7. Resiliency
+Please be sure to include information for both the  resiliency pattern  and the technology-specific resiliency information.  
+
+Cloud Resiliency Pattern Options: AWS Active-Active, AWS Active-Passive, AWS Active-Standby, AWS Single region 
+
+Link to resiliency patterns and show any deviations from pattern. 
+
+Include relevant architecture diagrams depicting failover and other resiliency related details.
+
+
+RTO (e.g. 24hr)
+
+RPO (e.g. 15 min)
+
+RTD
+
+RPD
+
+Business Process
+
+Related Recovery Group
+
+Dependencies
+
+List of Hard Dependencies - Consider if this asset has to failover to secondary region, what other assets need to failover.
+Known Upstream Dependencies - Consider assets that feed the solution or are inputs to the architecture.
+Known Downstream Dependencies - Consider assets that depend on this architecture. 
+
+
+
+8. Security Context
+
+Reference all standard security patterns used and show any deviations from patterns
+
+List Network ACL and security 
+
+List Producer and Consumer Roles and cross account trust
+
+List security components for authentication/authorization and encryption (at rest and in transit) at each layer (FMSSO/PING, TLS, Twistlock, s3 encryption)
+
+List security components used for security log delivery and monitoring (e.g. CloudWatch Logs, Splunk)
+
+List security components for secrets and credential management (e.g. AWS Secrets Manager Set-Up pattern)
+
+Include relevant architecture diagrams.
+
+8.1 Identity & Access Management
+Describe the roles and types of permissions that will be needed for the application.
+
+#	
+Role
+Internal or External
+Used by
+Account Type
+(Privileged, Non-Privileged, N/A)
+Scope
+Authorized Privileges
+Functions Performed
+Estimated Count
+
+8.2 Credential Management
+Describe the user base (internal or external users, or both), authentication credentials used by all system components, 
+including Fannie Mae enterprise identity store or non-standard identity store. 
+8.3 Access Provisioning
+Describe credential and access provisioning and de-provisioning mechanisms.
+8.4 Authentication and Authorization
+Describe all enforcement points for authentication and authorization. 
+8.5 Application Security
+Identify the application risk level, programming languages used, web based user interfaces, code review and penetration testing requirements and status. 
+8.6 Infrastructure Security
+Identify versions of all technical architecture components. Ensure all vulnerabilities are patched and monitored. 
+8.7 Data Security
+Identify data classification, NPI data, highly restricted data.  Define protection mechanism for data at rest and data in transit. 
+8.8 Security Monitoring
+Describe the security logging and monitoring requirements and mechanisms. Describe critical logs, location, and critical events that need to be monitored and how they are being monitored. 
+8.9 Operations Security
+Identify the support teams of the systems and the application tier classification information. Describe the privileges required for operation support, incident response process and any data backup/retention mechanism used
+8.10 Application-Specific NIST Controls
+8.11 Threat Model Assessment
+Ensure a Threat Model of the application has been created 
+	
+9. Observability
+
+10. DevOps, Test and Build Architecture 
+Provide links to DevOps patterns and note any deviations from the pattern.  The patterns should show:
+
+Delivery pipeline diagram
+
+Tools used (bitbucket, gitlab, ucd, jenkins, ecr, dtr, etc)
+
+Delivery pattern requirements (blue/green, canary, etc) 
+
+11. Tech Debt, MSIs & Exceptions
+ 
+
+12. References
